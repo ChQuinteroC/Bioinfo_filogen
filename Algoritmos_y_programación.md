@@ -1,6 +1,6 @@
-# Unidad 3 Algoritmos y programación
+# Algoritmos y programación
 
-En esta unidad veremos cómo escribir *scripts* para resolver algoritmos a través de código de cómputo. 
+En esta parte veremos cómo escribir *scripts* para resolver algoritmos a través de código de cómputo. 
 
 Comencemos por 
 
@@ -42,8 +42,8 @@ Paso 2: Obtener secuencias raw en formato FASTQ
 Paso 3: Descartar secuencias de baja calidad
 Paso 4: Demultiplexear secuencias por individuo
 Paso 5: Realizar ensamblado de novo
-Paso 6: Genotypificiar individuos
-Paso 7: Mostrar matriz de genotypos por individuos
+Paso 6: Genotipificar individuos(GBS/RADseq)
+Paso 7: Mostrar matriz de genotipos por individuos
 Paso 7: Fin
 ```
 
@@ -53,20 +53,20 @@ Tener claro el algoritmo con el que solucionaremos un problema nos ayuda a despu
 
 ### Algoritmos y scripts
 
-Como vimos en la Unidad 1, un **script** es:
+Como vimos hace rato, un **script** es:
 
 * un archivo de texto plano (**¡¡NO WORD!!**)
-* permanente,
-* repetible,
-* antoado,
-* compartible y 
+* permanente
+* repetible
+* antoado
+* compartible  
 * compatible con otras plataformas
 
 El script consta de dos tipos de texto: 
 
 1. El **código** (comandos) que queremos que se ejecute, en el órden que queremos que lo ejecute. O sea que un script es una **serie de comandos que siguen la lógica de un algoritmo**.
 
-2. Comentarios escritos **para un ser humano** en un **lenguaje de humanos**.
+2. Comentarios escritos **para un ser humano** en un **lenguaje de humanos** (SUPER IMPORTANTE, puede salvarte en muchas ocasiones).
 
 Una buena forma de escribir un script es:
 
@@ -140,9 +140,9 @@ Escribir un script es escribir en un **editor de texto** los comandos para resol
 
 Editores de texto recomendados:
 
-* Windows: [Notepad++](https://notepad-plus-plus.org/)
-* Mac: [TextWrangler](http://download.cnet.com/TextWrangler/3000-2351_4-10220012.html) o [Fraise](http://www.macupdate.com/app/mac/33751/fraise)
-* Linux: [Gedit](http://sourceforge.net/projects/gedit/)
+* Windows: [Notepad++](https://notepad-plus-plus.org/) (Sublime)
+* Mac: [TextWrangler](http://download.cnet.com/TextWrangler/3000-2351_4-10220012.html) o [Fraise](http://www.macupdate.com/app/mac/33751/fraise) (Sublime)
+* Linux: [Gedit](http://sourceforge.net/projects/gedit/) (Sublime)
 
 El ejemplo que vimos antes, escrito en TextWrangler se ve así:
 
@@ -235,59 +235,3 @@ $ ./getsecsNCBI.sh
 **Ojo:** hay un `./` antes del nombre del script, esto sirve para decirle dónde está dicho script, ya que por default la Terminal busca los comandos en los directorios enlistados en tu PATH (`echo $PATH`) para saber cuales son. 
 
 **Comentario:** si tienes una serie de scripts que usas mucho, vale la pena ponerlos todos juntos en una carpeta y volver a esta carpeta parte de tu PATH. Checa el Capítulo 6 de Haddock & Dunn (2011) para cómo.
-
-
-## Ejercicios
-
-1. Escribe **una** línea de código que cree un archivo con los nombres de las muestras de maiz enlistadas en `Practicas/Uni2/Maiz/nuevos_final.fam`. 
-
-2. Escribe un script que cree 4 directorios llamados PobA, PobB, PobC, PobD y dentro de cada uno de ellos un archivo de texto que diga "Este es un individuo de la población x" donde x debe corresponder al nombre del directorio. 
-
-3. Escribe un script que baje 5 secuencias (algún loci corto, no un genoma) de una especie que te interese y señala cuántas veces existe la secuencia "TGCA" en cada una de ellas. ¿Sabes qué hace esta secuencia?
-
-4. Imagina que tienes datos de RADseq de una serie de poblaciones de una especie a lo largo de la Sierra Madre Occidental colectados a altas y bajas altitudes. Ya has filtrado las secuencias sucias, demultiplexeado y corrido un ensamblaje *de novo* utilizando el programa [Stacks](http://catchenlab.life.illinois.edu/stacks/). 
-
-En [Practicas/Uni3/Ejstacks](../Practicas/Uni3/Ejstacks) encontrarás varios directorios como los que hubieras generado hasta este momento si dichos datos fueran reales. Por ejemplo, en el directorio `/raw` estarían tus secuencias crudas y en el directorio `/stacks` el output del ensamblado de Stacks y tu Population Map [busca qué es aquí](http://catchenlab.life.illinois.edu/stacks/comp/populations.php). 
-
-**a) Desde la Terminal explora el archivo `Ejstacks/stacks/PopMapAll.txt`.**  
-
-Notarás un patrón muy simple en cómo están llamadas tus muestras:
-
-* Los primeros tres caracteres corresponden a un estado de la república
-* Los segundos tres caracteres corresponen a la categoría altitudinal de la muestra
-* Los números del final se refieren al número de muestra para ese estado y altitud. 
-
-Tras un análisis del resultado que obtuviste de estos datos tu y una colaboradora deciden correr un programa que requiere los datos en formato [plink](http://pngu.mgh.harvard.edu/~purcell/plink/), por lo que tuviste que utilizar el módulo [*populations* de Stacks](http://catchenlab.life.illinois.edu/stacks/comp/populations.php) para exportar tus datos al formato adecuado. 
-
-Esto lo lograste incluyendo en un script una líndea de comando como la de abajo (pero sustituyendo lo que está entre `[]` por el path adecuado:
-
-`populations -P [pathdirectorioDatosStacks] -M ../stacks/PopMapAll.txt -b 1 -f p_value --plink --write_single_snp`
-
-Después de analizar estos datos tu colaboradora observa que tienes muchos datos faltantes (missing data), lo cual interfiere con el análisis, por lo que te escribe lo siguiente:
-
-"*Seems like in order to get all the populations (State+Altitude) included, 7 individuals is the highest we can go. I'd recommend filtering out all SNPs that are in less than 7 individuals per population, and then selecting SNPs again to export to plink format as you did before. It might be worth going back in the future and doing this again at different levels of individuals; so could you please send me the data ran independently for each population for everything from min 7 to 10 individuals?*"
-
-Tras consultar el manual de [*populations* de Stacks](http://catchenlab.life.illinois.edu/stacks/comp/populations.php) notas que hay una opción (`-r`) para filtrar los loci acorde a que existan en un mínimo de individuos de una población, pero que está en términos de porcentaje y no de número de individuos. 
-
-`
-r — minimum percentage of individuals in a population required to process a locus for that population.
-`
-
-**b) Haz un script que te permitiría correr el programa _populations_ de Stacks independientemente para cada población y para cada mínimo de individuos que te pidió tu colaboradora, considerando lo siguiente**:
-
- 
-*  Tu script debe determinar automáticamente el valor que darle a `-r` con base en el número total de individuos por cada población (ej: 5 individuos de 10 que hay en la población= 5/10). 
-
-* Como no tienes instalado el programa Stacks (ni datos) la línea de tu script donde correrías *populations* debe hacer un `echo` de cómo debiera verse la línea para correr *populations*. Otros comando, por ejemplo crear directorios, sí deben funcionar. 
-
-* El output de *populations* serían dos archivos llamados plink.ped y plink.map. Como no lo estamos corriendo de verdad, el ejercico es que el `echo` del punto anterior sea escrito a un archivo de texto llamado `falsoplink.out` y que dicho archivo quede dentro un directorio por población y filtro mínimo de individuos. 
-
-5.- Revisa la sección de Métodos del artículo [Zhang X, Niu J, Liang Y, Liu X, Yin H (2016) Metagenome-scale analysis yields insights into the structure and function of microbial communities in a copper bioleaching heap. BMC Genetics, 17, 21.](http://bmcgenet.biomedcentral.com/articles/10.1186/s12863-016-0330-4) y describe su pipeline bioinformática a manera de algoritmo.
-
-6.- Describe a manera de algoritmo cuáles son los pasos que ocupó la pipeline bioinformática de un artículo que haya utilizado el tipo de datos y preguntas biológicas de tu proyecto.
-
-
-
-
-
-  
