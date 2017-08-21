@@ -12,5 +12,4 @@ La idea de impartir la clase de sistematica II con un poco de bioinformática fu
 el tema en Facultas de Ciencias para los estudiantes de biología. La infomación que se les dara en el transcruso del curso
 no sera muy afondo, más bien, sera solo introductoria para el área y el manejo de softwares especializados.
 
-En el repositorio habra solo 2 o 3 unidades (creo), en donde vendra lo basico que necesitan saber de bioinformática y posible-
-mente de los paquetes de R que usaremos. 
+En el repositorio habra solo 2 o 3 "unidades" (creo), en donde vendra lo basico que necesitan saber de bioinformática y posiblemente de los paquetes de R que usaremos. 
