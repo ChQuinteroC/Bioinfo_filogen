@@ -1,6 +1,11 @@
 # Unidad 1 Bioinformática e investigación reproducible 
 
+===============================================================================
 
+Texto original de Alicia Mastretta (legal!!)
+Github: https://github.com/AliciaMstt/BioinfInvRepro2016-II.git
+
+===============================================================================
 
 Lecturas para esta unidad: 
 
