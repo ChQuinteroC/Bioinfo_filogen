@@ -1,6 +1,6 @@
-# Unidad 2 Introducción a Unix Shell
+# 3.Introducción a Unix Shell
 
-## 2.1. Introducción a la Consola y Línea de Comando
+## 3.1. Introducción a la Consola y Línea de Comando
 
 
 La terminal y Unix
@@ -71,12 +71,18 @@ La terminal dirá:
 Que quiere decir que no existe el comando `algo`. 
 
 
-## 2.2. Funciones básicas de navegación y manejo de archivos y directorios
+
+## 3.2. Funciones básicas de navegación y manejo de archivos y directorios
+
 Windows, Mac y las interfaces gráficas de Linux (como Ubuntu y Biolinux) tienen un sistema de archivos que estamos acostumbrados a explorar a través carpetas y subcarpetas que podemos ver en una ventana. Por ejemplo así:
 
 ![Findereg](Finder01.png) 
 
-A continuación vamos a ver cómo navegar por este **mismo** sistema de archivos, pero desde la Terminal y con el teclado en vez de desde una ventana y con clicks.### `pwd``pwd` nos da el directorio en donde estamos (viene de print **working directory**). 
+A continuación vamos a ver cómo navegar por este **mismo** sistema de archivos, pero desde la Terminal y con el teclado en vez de desde una ventana y con clicks.
+
+### `pwd`
+
+`pwd` nos da el directorio en donde estamos (viene de print **working directory**). 
 
 El directorio de trabajo es **dónde estamos**, equivalente a tener una ventana abierta del explorador en una carpeta determinada. Al menos que le indiques lo contrario, todo archivo que se genere como parte de la ejecución de un programa se guardará aquí. También este será el lugar donde cualquier programa/script buscará los archivos que le pidas, y NO los encontrará si no están exactamente ahí. Claro que es posible decirle que busque en otro directorio, lo veremos adelante.  
 
@@ -177,7 +183,10 @@ O en otras palabras ir al directorio donde ya estás. Suena inútil, y en genera
 
 `cd ./` te lleva al directorio en el que estás. Lo importante a recordar es que `.` significa "el directorio actual". 
 
-#### Errores comunes al usar `cd`
+
+#### Errores comunes al usar `cd`
+
+
 * `-bash: cd: manzanas: No such file or directory`
 
  ¿Escribiste bien Manzanas? Ups. No. Es Manzanas no manzanas. Ojo con las mayúsculas. También aguas con  los errores de dedo (e.g. Manzaanas arrojaría el mismo error)
@@ -191,7 +200,8 @@ O en otras palabras ir al directorio donde ya estás. Suena inútil, y en genera
   
   Ojo, con tus espacios `cd..` no es lo mismo que `cd ..`. Otro clásico es poner `cd ...`
 
-En resumen: checa que esté bien escrito y que puedas ir a ese directorio con la ruta que le estás pidiendo. 
+
+En resumen: checa que esté bien escrito y que puedas ir a ese directorio con la ruta que le estás pidiendo. 
 
 #### Tips de acceso rápido en la Terminal
 
@@ -515,7 +525,9 @@ ejemplo_final.bed	nuevos_final.bed
 Hay más comodines, puedes explorarlos [aquí](http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm).
 
 
-## 2.3. Funciones básicas de exploración de archivos
+
+
+## 3.3. Funciones básicas de exploración de archivos
 
 ### `more`
 
@@ -819,7 +831,9 @@ Es decir, básicamente es como copiar-pegar un archivo al final de otro.
 
 **Pregunta:** ¿Y si quisiéramos tener el resultado en un archivo nuevo?
 
-## 2.4. Redirección
+
+
+## 3.4. Redirección
 
 **Pregunta** ¿Qué son el Standar output y el Standar input?
 
@@ -1102,7 +1116,9 @@ Y buenos ejemplos de cómo usar `grep` [aquí](http://www.thegeekstuff.com/2009/
 
 **Nota:** `awk` y `sed` son otros comandos similares a grep que también usan expresiones regulares. No los cubriremos aquí, pero vale la pena darles un ojo. [Aquí ejemplos de cómo se utilizan para manipular archivos fasta](http://bioinformatics.cvr.ac.uk/blog/short-command-lines-for-manipulation-fastq-and-fasta-sequence-files/).
 
-## 2.5. For loops
+
+
+## 3.5. For loops
 
 ### For loops
 
