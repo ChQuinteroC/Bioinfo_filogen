@@ -18,7 +18,7 @@ El directorio del proyecto debe dividirse a su vez, lo recomendable es que sea e
 
 * **archive**este directorio NO se sube al repositorio, pero es bueno tenerlo para ir poniendo ahí scripts y resultados que crees no necesitar más pero que es bueno no borrar por completo.
 
-* **out** (!!!)
+* **out** (!!!) directorio dónde estaran tus output files.
 
 También es posible tener un directorio para cada subanálisis concreto, por ejemplo uno para *Mesquite*, *stacks* y otro para *admixture*, pero dentro de cada uno de ellos subdirectorios como los anteriores. 
 
