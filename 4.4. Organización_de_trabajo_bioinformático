@@ -1,10 +1,8 @@
-4.4. Organización de un proyecto bioinformático 
-
+# 4.4. Organización de un proyecto bioinformático## 
 
 Un proyecto bioinformático consiste en los datos crudos, datos procesados, scripts y documentación (README) necesarios para reproducir los análisis realizados. Es decir en todo lo que al final debes subir a un repositorio como Dryad (aunque los datos pueden conectarse desde otros repos, como SRA, claro). 
 
-
-4.4.1. Organización de directorios 
+# 4.4.1. Organización de directorios 
 
 Un proyecto bioinformático debe tener su propio **directorio** (carpeta) y contener en subdirectorios todo lo necesario para realizarlo.
 
