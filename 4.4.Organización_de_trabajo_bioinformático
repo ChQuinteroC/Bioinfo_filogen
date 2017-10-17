@@ -1,10 +1,10 @@
-## 4.4. Organización de un proyecto bioinformático 
+4.4. Organización de un proyecto bioinformático 
 
 
 Un proyecto bioinformático consiste en los datos crudos, datos procesados, scripts y documentación (README) necesarios para reproducir los análisis realizados. Es decir en todo lo que al final debes subir a un repositorio como Dryad (aunque los datos pueden conectarse desde otros repos, como SRA, claro). 
 
 
-## 4.4.1. Organización de directorios 
+4.4.1. Organización de directorios 
 
 Un proyecto bioinformático debe tener su propio **directorio** (carpeta) y contener en subdirectorios todo lo necesario para realizarlo.
 
@@ -27,7 +27,7 @@ También es posible tener un directorio para cada subanálisis concreto, por eje
 Independientemente del nombre que escojamos para los directorios y archivos, qué es qué y dónde está cada cosa debe ir explicado en un **README**.
 
 
-## 4.4.2. Organización de scripts 
+4.4.2. Organización de scripts 
 
 Como hemos visto, un script puede realizar un análisis sencillo o "disparar" otros scripts para correr una pipeline completa. También es posible que algunos de tus scripts sean *funciones* a ser utilizadas por otros scripts (por ejemplo con el comando `source()` en R) y otros scripts  
 
@@ -42,7 +42,7 @@ Para recordar qué correr en qué orden puedes "numerar" tus scripts, de modo qu
 Al final deberás incluir en tu README una pequeña explicación de qué hace cada script. 
 		
 
-## 4.4.3. Control de versiones 
+4.4.3. Control de versiones 
 
 El control de versiones se refiere a llevar un registro de los cambios que se realizan sobre un proyecto informático, particularmente sobre las modificaciones a los scripts.
 Es muy buena idea llevar un control de versiones de tus scrips en tu carpeta `bin`. Esto puedes hacerlo por ejemplo con Github.
